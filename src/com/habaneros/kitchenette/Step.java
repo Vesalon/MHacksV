@@ -10,7 +10,7 @@ public class Step {
 		step = add;
 	}
 
-	public void makeTiemd() {
+	public void makeTimed() {
 		timed = true;
 	}
 }
