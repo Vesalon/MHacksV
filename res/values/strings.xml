@@ -9,5 +9,10 @@
     <string name="title_activity_create_recipe">CreateRecipeActivity</string>
     <string name="title_activity_choose_recipe_type">ChooseRecipeTypeActivity</string>
     <string name="title_activity_begin_cooking">BeginCookingActivity</string>
+    <string name="username_box">Username</string>
+    <string name="password_box">Password</string>
+    <string name="login_welcome">Welcome.</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="sign_in">Sign in to your account.</string>
 
 </resources>
