@@ -2,6 +2,8 @@ package com.habaneros.kitchenette;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.content.Intent;
+import android.view.View;
 
 public class LoginActivity extends Activity {
 	
