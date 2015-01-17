@@ -16,5 +16,11 @@ public class LoginActivity extends Activity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }	
+    private boolean testUsername(String username) {
+        return username.matches("\\w{6,12}");
+    }
+    private boolean testPassword(String password) {
+        return password.matches("[0-9]*|[a-z]*");    
+    }
 
 }
