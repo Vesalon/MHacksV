@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.habaneros.kitchenette"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.habaneros.kitchenette.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.habaneros.kitchenette.RegisterActivity"
+            android:label="@string/title_activity_register_activty" >
+        </activity>
+        <activity
+            android:name="com.habaneros.kitchenette.ChooseRecipeActivity"
+            android:label="@string/title_activity_choose_recipe" >
+        </activity>
+        <activity
+            android:name="com.habaneros.kitchenette.CreateRecipeActivity"
+            android:label="@string/title_activity_create_recipe" >
+        </activity>
+        <activity
+            android:name="com.habaneros.kitchenette.ChooseRecipeTypeActivity"
+            android:label="@string/title_activity_choose_recipe_type" >
+        </activity>
+        <activity
+            android:name="com.habaneros.kitchenette.BeginCookingActivity"
+            android:label="@string/title_activity_begin_cooking" >
+        </activity>
+    </application>
+
+</manifest>
