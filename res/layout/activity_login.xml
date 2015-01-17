@@ -7,27 +7,26 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/login_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:text="@string/login_welcome"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#000000"
+        android:textColor="#342016"
         android:textSize="60dp" />
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="60dp"
-        android:fontFamily="Yesteryear"
         android:text="@string/sign_in"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#000000"
+        android:textColor="#342016"
         android:textSize="20dp" />
 
     <EditText
@@ -37,6 +36,9 @@
         android:layout_gravity="center_horizontal"
         android:ems="10"
         android:hint="@string/username_box"
+        android:textColor="#342016"
+        android:textColorHint="#342016"
+        android:textColorLink="#342016"
         android:width="250dp" />
 
     <EditText
@@ -47,6 +49,9 @@
         android:ems="10"
         android:hint="@string/password_box"
         android:inputType="textPassword"
+        android:textColor="#342016"
+        android:textColorHint="#342016"
+        android:textColorLink="#FFFFFF"
         android:width="250dp" >
 
         <requestFocus />
