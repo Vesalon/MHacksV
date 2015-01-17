@@ -10,6 +10,9 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 	}
 	
-	
+    public void toMainScreen(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }	
 
 }
