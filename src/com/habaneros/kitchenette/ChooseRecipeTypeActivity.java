@@ -4,10 +4,12 @@ import com.microsoft.windowsazure.mobileservices.*;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class ChooseRecipeTypeActivity extends Activity {
 
@@ -16,7 +18,11 @@ public class ChooseRecipeTypeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose_recipe_type);
 		RecipeList.populate();
-		ourDropdown();
+		Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Yesteryear-Regular.ttf");
+		TextView title1 = (TextView) findViewById(R.id.chooseRecipeType);
+		title1.setTypeface(type);
+		TextView title2 = (TextView) findViewById(R.id.createRecipeType);
+		title2.setTypeface(type);
 	}
 
 	//Note that this class is for choosing between our recipes or making their own recipe
