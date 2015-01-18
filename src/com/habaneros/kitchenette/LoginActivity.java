@@ -15,13 +15,12 @@ public class LoginActivity extends Activity {
 	}
 	
     public void toMainScreen(View view) {
-    	EditText name = (EditText) findViewById(R.id.loginButton);
-    	if(name == null) {
+    	MainActivity.name = ((EditText) findViewById(R.id.usernameInput)).getText().toString();
+    	if(MainActivity.name.equals(" ")) {
     		String err = "Please enter a name!";
     		Toast.makeText(getBaseContext(), err, Toast.LENGTH_SHORT).show();
     	}
     	else {
-    		MainActivity.name = name.toString();
 	        Intent intent = new Intent(this, ChooseRecipeTypeActivity.class);
 	        startActivity(intent);
 	        

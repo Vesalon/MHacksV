@@ -10,12 +10,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/logo_large"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
         <activity
             android:name="com.habaneros.kitchenette.MainActivity"
-            android:label="@string/app_name" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,25 +25,38 @@
         </activity>
         <activity
             android:name="com.habaneros.kitchenette.RegisterActivity"
-            android:label="@string/title_activity_register_activty" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            android:label="@string/title_activity_register_activty"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
         </activity>
         <activity
             android:name="com.habaneros.kitchenette.ChooseRecipeActivity"
-            android:label="@string/title_activity_choose_recipe" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            android:label="@string/title_activity_choose_recipe"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
         </activity>
         <activity
             android:name="com.habaneros.kitchenette.CreateRecipeActivity"
-            android:label="@string/title_activity_create_recipe" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            android:label="@string/title_activity_create_recipe"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
         </activity>
         <activity
             android:name="com.habaneros.kitchenette.ChooseRecipeTypeActivity"
-            android:label="@string/title_activity_choose_recipe_type" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            android:label="@string/title_activity_choose_recipe_type"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
         </activity>
         <activity
             android:name="com.habaneros.kitchenette.BeginCookingActivity"
-            android:label="@string/title_activity_begin_cooking" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            android:label="@string/title_activity_begin_cooking"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
         </activity>
-        <activity android:name="com.habaneros.kitchenette.LoginActivity" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" android:label="@string/title_activity_login"></activity>
+        <activity
+            android:name="com.habaneros.kitchenette.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.habaneros.kitchenette.AddStepActivity"
+            android:label="@string/title_activity_add_step" >
+        </activity>
     </application>
 
 </manifest>

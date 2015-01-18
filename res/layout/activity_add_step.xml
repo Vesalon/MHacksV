@@ -7,12 +7,12 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/chooseRecipeName"
+        android:id="@+id/stepNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:text="What is the recipe name?"
+        android:layout_marginTop="20dp"
+        android:text="1. "
         android:textColor="#342016"
         android:textSize="25dp" />
 
