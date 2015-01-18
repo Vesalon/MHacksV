@@ -31,6 +31,8 @@ public class CreateRecipeActivity extends Activity {
 		
 		Intent i = new Intent(this, AddStepActivity.class);
 		i.putExtra("recname", name);
+		Recipe recipe = new Recipe(MainActivity.getName(), name);
+		i.putExtra("recipe", recipe);
 		startActivity(i);
 	
 //	Item item = new Item();
