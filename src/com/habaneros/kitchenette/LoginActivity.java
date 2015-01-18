@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 	
@@ -13,8 +15,17 @@ public class LoginActivity extends Activity {
 	}
 	
     public void toMainScreen(View view) {
-        Intent intent = new Intent(this, ChooseRecipeTypeActivity.class);
-        startActivity(intent);
+    	EditText name = (EditText) findViewById(R.id.loginButton);
+    	if(name == null) {
+    		String err = "Please enter a name!";
+    		Toast.makeText(getBaseContext(), err, Toast.LENGTH_SHORT).show();
+    	}
+    	else {
+    		MainActivity.name = name.toString();
+	        Intent intent = new Intent(this, ChooseRecipeTypeActivity.class);
+	        startActivity(intent);
+	        
+    	}
     }	
 
 }

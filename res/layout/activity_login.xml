@@ -15,7 +15,7 @@
         android:text="Welcome. What can we call you?"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#342016"
-        android:textSize="50dp" />
+        android:textSize="30dp" />
 
 
     <EditText
@@ -30,6 +30,17 @@
         android:textColorLink="#342016"
         android:width="250dp"
         android:textSize="30dp" />
+    
+    <Button 
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Enter"
+        android:textColor="#342016"
+        android:textSize="50dp" 
+        android:onClick="toMainScreen" />
+    
 
 
 

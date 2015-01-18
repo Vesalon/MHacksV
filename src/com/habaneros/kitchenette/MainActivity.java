@@ -7,7 +7,7 @@ import android.view.View;
 
 public class MainActivity extends Activity {
 	
-	private String name = "";
+	public static String name = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
