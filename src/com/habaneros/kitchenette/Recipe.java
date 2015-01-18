@@ -4,9 +4,16 @@ import java.util.ArrayList;
 public class Recipe {
 
 	private ArrayList<Step> steps;
+	private String name;
+	private String author;
+	private int rating;
+	
 
-	public Recipe() {
+	public Recipe(String user, String recipeName) {
 		 steps = new ArrayList<Step>();
+		 name = recipeName;
+		 author = user;
+		 
 	}
 
 	public Recipe(ArrayList<Step> firstSteps) {
@@ -40,5 +47,19 @@ public class Recipe {
 		Step s = new Step(step);
 		s.makeTimed();
 		steps.add(s);
+	}
+	
+	public int size() {
+		return steps.size();
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public int getRating() {
+		return rating;
 	}
 }

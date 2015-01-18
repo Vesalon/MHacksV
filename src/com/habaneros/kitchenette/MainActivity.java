@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends Activity {
+	
+	private String name = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -14,12 +16,13 @@ public class MainActivity extends Activity {
 	}
 	
 	public void toLogin(View view) {
-		Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+		if(name.equals("")) {
+			Intent intent = new Intent(this, LoginActivity.class);
+	        startActivity(intent);
+		} else {
+			Intent i = new Intent(this, ChooseRecipeTypeActivity.class);
+			startActivity(i);
+		}
 	}
-	
-	public void toRegister(View view) {
-		Intent intent = new Intent(this, RegisterActivity.class);
-        startActivity(intent);
-	}
+
 }
