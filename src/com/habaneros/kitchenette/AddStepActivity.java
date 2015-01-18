@@ -53,7 +53,7 @@ public class AddStepActivity extends Activity {
 			msclient = new MobileServiceClient("https://kitchenettedata.azure-mobile.net/","zjMScFfArAtVBTMcVyCZwuqZOmekuS33",
 					this);
 			msclient.getTable(Recipe.class).insert(recipe, new TableOperationCallback<Recipe>() {
-			      public void onCompleted(Item entity, Exception exception, ServiceFilterResponse response) {
+			      public void onCompleted(Recipe entity, Exception exception, ServiceFilterResponse response) {
 			            if (exception == null) {
 			                  // Insert succeeded
 			            	//display in long period of time
@@ -64,20 +64,6 @@ public class AddStepActivity extends Activity {
 			            }
 			      }
 
-				@Override
-				public void onCompleted(Recipe arg0, Exception arg1,
-						ServiceFilterResponse arg2) {
-					// TODO Auto-generated method stub
-					if (arg1 == null) {
-		                  // Insert succeeded
-		            	//display in long period of time
-		            	Toast.makeText(getApplicationContext(), "SUCCESS", Toast.LENGTH_LONG).show();
-		            } else {
-		                  // Insert failed
-		            	Toast.makeText(getApplicationContext(), "FAILURE", Toast.LENGTH_LONG).show();
-		            }
-					
-				}
 			});
 
 //			// Insert the new item
