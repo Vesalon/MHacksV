@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="#342016"
+    android:background="@drawable/gradient"
     android:onClick="toLogin" >
 
     <ImageView
@@ -24,7 +24,7 @@
         android:text="Kitchenette"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#f26522"
-        android:textSize="50sp" />
+        android:textSize="80sp" />
 
     <TextView
         android:id="@+id/main_greeting"
