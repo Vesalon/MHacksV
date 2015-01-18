@@ -16,8 +16,7 @@ public class AddStepActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_step);
-		Intent i = new Intent();
-		recname = i.getCharArrayExtra("recname").toString();
+		recname = getIntent().getExtras().getString("recname");
 	}
 	
 	public void toNextStep(View view) {
