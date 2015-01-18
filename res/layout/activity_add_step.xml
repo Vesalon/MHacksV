@@ -4,68 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f26522"
+    android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-
-    
-    <TextView
-        android:id="@+id/stepNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:text="Step 1."
-        android:textColor="#342016"
-        android:textSize="50dp" />
-
-    
-        <EditText
-        android:id="@+id/recipeStep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stepNumber"
-        android:ems="10"
-        android:hint="ex. Fry the eggs in olive oil"
-        android:paddingLeft="30dp"
-        android:textColor="#342016"
-        android:textColorHint="#342016"
-        android:textColorLink="#342016"
-        android:textSize="25dp" />
-        
-            
-     <TextView
-        android:id="@+id/askHowLong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/recipeStep"
-        android:layout_centerHorizontal="true"
-        android:text="How Long For?"
-        android:textColor="#342016"
-        android:textSize="25dp" />
-        
         <Button
-            android:id="@+id/nextStep"
+            android:id="@+id/doneButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/hoursText"
-            android:layout_marginTop="50dp"
-            android:onClick="toNextStep"
-            android:text="Add another step"
-            android:textColor="#342016"
+            android:layout_below="@+id/nextStep"
+            android:layout_marginTop="5dp"
+            android:onClick="finishRecipe"
+            android:text="Recipe Finished"
+            android:textColor="#FFFFFF"
             android:textSize="25dp" />
-
-        <Button
-        android:id="@+id/doneButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/nextStep"
-        android:layout_marginTop="5dp"
-        android:text="Recipe Finished"
-        android:textColor="#342016"
-        android:textSize="25dp"
-        android:onClick="finishRecipe" />
 
         <NumberPicker
             android:id="@+id/hours"
@@ -116,5 +68,58 @@
               android:layout_height="wrap_content"
               android:layout_above="@+id/secsText"
               android:layout_alignParentRight="true" />
+
+          <TextView
+              android:id="@+id/stepNumber"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"
+              android:layout_alignParentTop="true"
+              android:layout_marginLeft="15dp"
+              android:layout_marginTop="29dp"
+              android:text="Step 1."
+              android:textColor="#342016"
+              android:textSize="50dp" />
+
+          <EditText
+              android:id="@+id/recipeStep"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/stepNumber"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="24dp"
+              android:ems="10"
+              android:hint="ex. Fry two pounds of fish in olive oil"
+              android:paddingLeft="30dp"
+              android:textColor="#342016"
+              android:textColorHint="#342016"
+              android:textColorLink="#342016"
+              android:textSize="25dp" >
+
+              <requestFocus />
+          </EditText>
+
+          <TextView
+              android:id="@+id/askHowLong"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/recipeStep"
+              android:layout_marginTop="16dp"
+              android:layout_toRightOf="@+id/hours"
+              android:text="How Long For?"
+              android:textColor="#342016"
+              android:textSize="25dp" />
+
+          <Button
+              android:id="@+id/nextStep"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"
+              android:layout_below="@+id/hoursText"
+              android:layout_marginTop="35dp"
+              android:onClick="toNextStep"
+              android:text="Add another step"
+              android:textColor="#FFFFFF"
+              android:textSize="25dp" />
 
 </RelativeLayout>

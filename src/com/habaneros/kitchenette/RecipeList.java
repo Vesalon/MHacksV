@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 class RecipeList {
     
-    private static ArrayList<Recipe> recipes;
+    private static ArrayList<Recipe> recipes = new ArrayList<Recipe>();
     
     public static void populate() {
         Recipe pC = new Recipe("The Habaneros", "Praline Cheesecake");
