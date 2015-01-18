@@ -45,7 +45,7 @@ public class Recipe {
 
 	public void addTimedStep(String step) {
 		Step s = new Step(step);
-		s.makeTimed();
+		s.timed();
 		steps.add(s);
 	}
 	
