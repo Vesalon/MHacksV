@@ -18,10 +18,11 @@ public class MainActivity extends Activity {
 		Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Yesteryear-Regular.ttf");
 		TextView title = (TextView) findViewById(R.id.main_title);
 		title.setTypeface(type);
+		RecipeList.populate();
 	}
 	
 	public void toLogin(View view) {
-		if (name.equals("")) {
+		if (getName().equals("")) {
 			Intent i = new Intent(this, LoginActivity.class);
 			startActivity(i);
 		} else {
@@ -32,6 +33,10 @@ public class MainActivity extends Activity {
 	
 	public static void setName(String inputName) {
 		name = inputName;
+	}
+
+	public static String getName() {
+		return name;
 	}
 
 }
