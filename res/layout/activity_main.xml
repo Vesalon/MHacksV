@@ -9,11 +9,11 @@
 
     <ImageView
         android:id="@+id/logo_welcome"
-        android:layout_width="260dp"
-        android:layout_height="260dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="310dp"
+        android:layout_height="310dp"
         android:layout_gravity="center"
-        android:src="@drawable/logo_large" />
+        android:layout_marginTop="80dp"
+        android:src="@drawable/logo3dmed" />
 
     <TextView
         android:id="@+id/main_title"
