@@ -16,6 +16,7 @@ public class ChooseRecipeTypeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose_recipe_type);
 		RecipeList.populate();
+		ourDropdown();
 	}
 
 	//Note that this class is for choosing between our recipes or making their own recipe

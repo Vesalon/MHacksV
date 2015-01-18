@@ -3,15 +3,17 @@ package com.habaneros.kitchenette;
 import java.net.MalformedURLException;
 
 import android.app.Activity;
+import android.content.ClipData.Item;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.microsoft.windowsazure.mobileservices.*;
+import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
+import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
+import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
 
 public class AddStepActivity extends Activity {
 	
