@@ -33,7 +33,7 @@ public class Step {
 	}
 	
 	public String toString() {
-		String timer = isTimed() ? " for" + time.toString() : "";
+		String timer = isTimed() ? " for " + time.toString() : "";
 		return action + timer;
 	}
 	
@@ -56,21 +56,21 @@ public class Step {
 			String ret = "";
 			int count = 0;
 			if (sec != 0) {
-				ret = sec + "seconds";
+				ret = sec + " seconds";
 				count++;
 			}
 			if (min != 0 && count == 0) {
 				ret = min + "minutes";
 			} else if (min != 0) {
-				ret = min + "minutes and " + ret;
+				ret = min + " minutes and " + ret;
 				count++;
 			}
 			if (hour != 0 && count == 0) {
-				ret = hour + "hours";
+				ret = hour + " hours";
 			} else if (hour != 0 && count == 1) {
-				ret = hour + "hours and " + ret;
+				ret = hour + " hours and " + ret;
 			} else if (hour != 0 && count == 2) {
-				ret = hour + "hours " + ret;
+				ret = hour + " hours " + ret;
 			}
 			return ret;
 		}
