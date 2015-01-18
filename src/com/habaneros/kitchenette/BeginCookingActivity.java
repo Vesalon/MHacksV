@@ -15,7 +15,7 @@ public class BeginCookingActivity extends Activity {
 	TextView t;
 	TextView s;
 	Recipe recipe;
-	ArrayList<Step> steps = new ArrayList();
+	ArrayList<Step> steps = new ArrayList<Step>();
 
 
 	@Override

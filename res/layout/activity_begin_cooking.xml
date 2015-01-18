@@ -9,19 +9,23 @@
     tools:context=".BeginCookingActivity" >
 
     <TextView
-        android:id="@+id/steps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="lets cook!" />
-
-    <TextView
         android:id="@+id/timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="113dp"
+        android:text="Timer"
+        android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="72dp"
-        android:layout_marginTop="104dp"
-        android:text="" />
+        android:layout_alignRight="@+id/timer"
+        android:layout_marginTop="131dp"
+        android:text="Steps"
+        android:textSize="50dp" />
 
 </RelativeLayout>

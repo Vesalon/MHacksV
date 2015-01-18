@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/chooseRecipeName"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:text="What is the recipe name?"
+        android:text="What is the name of the recipe?"
         android:textColor="#342016"
         android:textSize="25dp" />
 
@@ -28,18 +28,15 @@
         android:textColorHint="#342016"
         android:textColorLink="#342016"
         android:textSize="25dp" />
-    
-    <Button 
+
+    <Button
         android:id="@+id/loginButton"
-        android:layout_width="match_parent"
+        android:layout_width="294dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:onClick="toAddStep"
         android:text="Continue"
-        android:textColor="#342016"
-        android:textSize="25dp" 
-        android:onClick="toAddStep" />
-    
-
-
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
 
 </LinearLayout>
