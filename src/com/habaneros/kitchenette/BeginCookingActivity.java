@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.widget.TextView;
 
 public class BeginCookingActivity extends Activity {
@@ -22,11 +23,19 @@ public class BeginCookingActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_begin_cooking);
+		otherInit();
+		
+	}
+
+	public void otherInit() {
 		t = (TextView) findViewById(R.id.steps);
 		s = (TextView) findViewById(R.id.timer);
+		Log.d("mashal", "got done w textviews");
 		
-		recipe = new Recipe(steps);
-		recipe.addStep("erjrfejkhfer");
+		recipe = new Recipe("me", "pie");
+		recipe.addStep("this is a stepzzzzzz");
+		Log.d("mashal", "got done with rec");
+		Log.d("mashal", recipe.toString());
 //
 //		recipe set to recipe that is chosen from ChooseRecipeActivity
 //		code should work after this
@@ -41,14 +50,15 @@ public class BeginCookingActivity extends Activity {
 		     }
 		  });
 
+		
 		for (int i = 0; i < recipe.size(); i++) {
 			String text = recipe.getFirstStep().toString();
 			t.setText(text);
 			readStep(recipe, i);
 		}
+		Log.d("mashal", "tts done?");
 
 	}
-
 
 
 	private void textToSpeech(String text) {

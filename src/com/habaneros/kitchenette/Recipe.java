@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Recipe implements Serializable {
 
 	private ArrayList<Step> steps;
+	private int numOfSteps;
 	private String name;
 	private String author;
 	private int rating;
@@ -16,12 +17,14 @@ public class Recipe implements Serializable {
 		 steps = new ArrayList<Step>();
 		 name = recipeName;
 		 author = user;
+		 numOfSteps = 0;
 		 
 	}
 
 	public Recipe(ArrayList<Step> firstSteps) {
 		for (int i = 0; i < firstSteps.size(); i++) {
 			steps.add(firstSteps.get(i));
+			numOfSteps++;
 		}
 	}
 
@@ -34,21 +37,25 @@ public class Recipe implements Serializable {
 	}
 
 	public Step removeStep(int index) {
+		numOfSteps--;
 		return steps.remove(index);
 	}
 
 	public Step removeFrontStep() {
+		numOfSteps--;
 		return steps.remove(0);
 	}
 
 	public void addStep(String step) {
 		Step s = new Step(step);
 		steps.add(s);
+		numOfSteps++;
 	}
 
 	public void addTimedStep(String step) {
 		Step s = new Step(step);
 		s.timed();
+		numOfSteps++;
 		steps.add(s);
 	}
 	
@@ -69,8 +76,13 @@ public class Recipe implements Serializable {
 	public int getRating() {
 		return rating;
 	}
+	public int getNumOfSteps() {
+		return numOfSteps;
+	}
 	
-	
+	public void setNumOfSteps(int num) {
+		numOfSteps = num;
+	}
 	public void setSteps(ArrayList<Step> steps) {
 		this.steps = steps;
 	}
@@ -85,5 +97,9 @@ public class Recipe implements Serializable {
 	}
 	public void setTotalTime(int time) {
 		this.totalTime = time;
+	}
+	
+	public String toString() {
+		return name + " by " + author + " for " + totalTime + " with a rating of " + rating; 
 	}
 }
