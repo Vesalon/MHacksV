@@ -9,8 +9,19 @@
     tools:context=".BeginCookingActivity" >
 
     <TextView
+        android:id="@+id/steps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="lets cook!" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="72dp"
+        android:layout_marginTop="104dp"
+        android:text="" />
 
 </RelativeLayout>
