@@ -1,5 +1,6 @@
 package com.habaneros.kitchenette;
 import com.microsoft.windowsazure.mobileservices.*;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +15,7 @@ public class ChooseRecipeTypeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose_recipe_type);
+		RecipeList.populate();
 	}
 
 	//Note that this class is for choosing between our recipes or making their own recipe

@@ -18,7 +18,6 @@ public class MainActivity extends Activity {
 		Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Yesteryear-Regular.ttf");
 		TextView title = (TextView) findViewById(R.id.main_title);
 		title.setTypeface(type);
-		RecipeList.populate();
 	}
 	
 	public void toLogin(View view) {
