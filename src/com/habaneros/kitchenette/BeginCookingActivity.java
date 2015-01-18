@@ -4,23 +4,35 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
-import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 public class BeginCookingActivity extends Activity {
 
 	TextToSpeech tts;
-	TextView t;
+	Chronometer t;
 	TextView step;
 	Recipe recipe;
 	ArrayList<Step> steps = new ArrayList<Step>();
+	ArrayList<String> s = new ArrayList<String>();
+	Bundle b;
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Intent intent = getIntent();
+		b = intent.getExtras();
+		s = b.getStringArrayList("recipe");
+		
+		for(int j = 0; j < s.size(); j++){
+			steps.add(new Step(s.get(j)));
+		}
+		recipe = new Recipe(steps);
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_begin_cooking);
 		otherInit();
@@ -28,9 +40,6 @@ public class BeginCookingActivity extends Activity {
 	}
 
 	public void otherInit() {
-		recipe = new Recipe("me", "apple pie");
-		recipe.addTimedStep("beat the eggs", 30, 21, 13);
-		
 		step = (TextView) findViewById(R.id.steps);
 		step.setText(recipe.getStep(0).toString());
 		
