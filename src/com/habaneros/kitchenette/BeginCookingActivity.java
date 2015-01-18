@@ -24,6 +24,8 @@ public class BeginCookingActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_begin_cooking);
 		Intent intent = getIntent();
 		b = intent.getExtras();
 		s = b.getStringArrayList("recipe");
@@ -33,8 +35,6 @@ public class BeginCookingActivity extends Activity {
 		}
 		recipe = new Recipe(steps);
 		
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_begin_cooking);
 		otherInit();
 		
 	}

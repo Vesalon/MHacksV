@@ -17,12 +17,13 @@ public class ChooseRecipeTypeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose_recipe_type);
-		RecipeList.populate();
 		Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Yesteryear-Regular.ttf");
 		TextView title1 = (TextView) findViewById(R.id.chooseRecipeType);
 		title1.setTypeface(type);
 		TextView title2 = (TextView) findViewById(R.id.createRecipeType);
 		title2.setTypeface(type);
+		RecipeList.populate();
+		ourDropdown();
 	}
 
 	//Note that this class is for choosing between our recipes or making their own recipe
@@ -48,9 +49,14 @@ public class ChooseRecipeTypeActivity extends Activity {
 //		//for now assume no DB
 //	}
 	
+//	public void toBeginCooking(View view) {
+//		Intent intent = new Intent(this, BeginCooking.class);
+//        startActivity(intent);
+//	}
+	
 	
 	public void toCreateRecipe(View view) {
-        Intent intent = new Intent(this, CreateRecipeActivity.class);
+		Intent intent = new Intent(this, CreateRecipeActivity.class);
         startActivity(intent);
     }	
 }
