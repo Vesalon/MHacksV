@@ -7,7 +7,7 @@ import android.view.View;
 
 public class MainActivity extends Activity {
 	
-	public static String name = " ";
+	private static String name = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,8 +16,17 @@ public class MainActivity extends Activity {
 	}
 	
 	public void toLogin(View view) {
-		Intent i = new Intent(this, ChooseRecipeTypeActivity.class);
-		startActivity(i);
+		if (name.equals("")) {
+			Intent i = new Intent(this, LoginActivity.class);
+			startActivity(i);
+		} else {
+			Intent i = new Intent(this, ChooseRecipeTypeActivity.class);
+			startActivity(i);
+		}
+	}
+	
+	public static void setName(String inputName) {
+		name = inputName;
 	}
 
 }
