@@ -1,5 +1,5 @@
 package com.habaneros.kitchenette;
-
+import com.microsoft.windowsazure.mobileservices.*;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

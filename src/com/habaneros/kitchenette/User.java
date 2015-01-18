@@ -1,4 +1,5 @@
 package com.habaneros.kitchenette;
+import com.microsoft.windowsazure.mobileservices.*;
 
 public class User {
 	
