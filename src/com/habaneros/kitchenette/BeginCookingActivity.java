@@ -1,5 +1,6 @@
 package com.habaneros.kitchenette;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 import android.app.Activity;
@@ -14,6 +15,7 @@ public class BeginCookingActivity extends Activity {
 	TextView t;
 	TextView s;
 	Recipe recipe;
+	ArrayList<Step> steps = new ArrayList();
 
 
 	@Override
@@ -22,6 +24,9 @@ public class BeginCookingActivity extends Activity {
 		setContentView(R.layout.activity_begin_cooking);
 		t = (TextView) findViewById(R.id.steps);
 		s = (TextView) findViewById(R.id.timer);
+		
+		recipe = new Recipe(steps);
+		recipe.addStep("erjrfejkhfer");
 //
 //		recipe set to recipe that is chosen from ChooseRecipeActivity
 //		code should work after this

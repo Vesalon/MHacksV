@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/AppBaseTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,35 +11,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:text="1. "
+        android:layout_marginTop="30dp"
+        android:text="Step 1.  "
         android:textColor="#342016"
         android:textSize="25dp" />
 
+	<EditText
+	    android:id="@+id/recipeStep"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignTop="@+id/stepNumber"
+	    android:ems="10"
+	    android:hint="Apple Pie"
+	    android:paddingLeft="30dp"
+	    android:textColor="#342016"
+	    android:textColorHint="#342016"
+	    android:textColorLink="#342016"
+	    android:textSize="25dp" >
+	
+	    <requestFocus />
+	</EditText>
 
-    <EditText
-        android:id="@+id/recipeNameInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:ems="10"
-        android:hint="Apple Pie"
-        android:textColor="#342016"
-        android:textColorHint="#342016"
-        android:textColorLink="#342016"
-        android:textSize="25dp" />
-    
-    <Button 
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Continue"
-        android:textColor="#342016"
-        android:textSize="25dp" 
-        android:onClick="toMainScreen" />
-    
-
-
-
-</LinearLayout>
+	<Button
+	    android:id="@+id/nextStep"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/recipeStep"
+	    android:layout_marginTop="50dp"
+	    android:text="Add another step"
+	    android:textColor="#342016"
+	    android:textSize="25dp"
+	    android:onClick="toNextStep" />
+	<Button
+	    android:id="@+id/doneButton"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/nextStep"
+	    android:layout_marginTop="5dp"
+	    android:text="Recipe Finished"
+	    android:textColor="#342016"
+	    android:textSize="25dp"
+	    android:onClick="finishRecipe" />
+</RelativeLayout>
