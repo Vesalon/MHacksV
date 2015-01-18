@@ -1,12 +1,14 @@
 package com.habaneros.kitchenette;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-public class Recipe {
+public class Recipe implements Serializable {
 
 	private ArrayList<Step> steps;
 	private String name;
 	private String author;
 	private int rating;
+	private int totalTime;
 	
 
 	public Recipe(String user, String recipeName) {
@@ -53,6 +55,10 @@ public class Recipe {
 		return steps.size();
 	}
 	
+	public ArrayList<Step> getSteps() {
+		return steps;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -61,5 +67,22 @@ public class Recipe {
 	}
 	public int getRating() {
 		return rating;
+	}
+	
+	
+	public void setSteps(ArrayList<Step> steps) {
+		this.steps = steps;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setAuthor(String auth) {
+		this.author = auth;
+	}
+	public void setRating(int rate) {
+		this.rating = rate;
+	}
+	public void setTotalTime(int time) {
+		this.totalTime = time;
 	}
 }
