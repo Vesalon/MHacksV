@@ -13,6 +13,7 @@ public class AddStepActivity extends Activity {
 	private Integer stepNum;
 	private String recname;
 	private static Recipe recipe;
+	private EditText step;
 	
 
 	@Override
@@ -22,12 +23,12 @@ public class AddStepActivity extends Activity {
 		Intent intent = getIntent();
 		recname = intent.getStringExtra("recname");
 		recipe = new Recipe(MainActivity.getName(), recname);
+		step = (EditText) findViewById(R.id.recipeStep);
 		stepNum = 1;
 	}
 	
 	public void toNextStep(View view) {
-		
-		recipe.addStep(((EditText) findViewById(R.id.recipeStep)).getText().toString());
+		recipe.addStep(step.getText().toString());
 		stepNum++;
 		TextView t = (TextView) findViewById(R.id.stepNumber);
 		t.setText("Step " + String.valueOf(stepNum)+ ".");
@@ -84,10 +85,10 @@ public class AddStepActivity extends Activity {
 //			e.printStackTrace();
 //		}
 		
-		
+		recipe.addStep(step.getText().toString());
+		int ind = RecipeList.addRecipe(recipe);
 		Intent intent = new Intent(this, BeginCookingActivity.class);
-		intent.putExtra("RECIPE_OBJECT", recipe);
-		RecipeList.addRecipe(recipe);
+		intent.putExtra("com.habaneros.Kitchenette.recname", ind);
 		//should actually go to an intermediate screen which lists time and crap
 		startActivity(intent);
 		

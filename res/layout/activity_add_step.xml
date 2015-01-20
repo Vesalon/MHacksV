@@ -7,18 +7,6 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/doneButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/nextStep"
-            android:layout_marginTop="5dp"
-            android:onClick="finishRecipe"
-            android:text="Recipe Finished"
-            android:textColor="#FFFFFF"
-            android:textSize="25dp" />
-
         <NumberPicker
             android:id="@+id/hours"
             android:layout_width="wrap_content"
@@ -55,19 +43,13 @@
               android:id="@+id/secsText"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_above="@+id/nextStep"
-              android:layout_toRightOf="@+id/askHowLong"
+              android:layout_alignBottom="@+id/minsText"
               android:layout_alignParentRight="true"
+              android:layout_alignTop="@+id/minsText"
+              android:layout_toRightOf="@+id/askHowLong"
               android:text="secs"
               android:textColor="#342016"
               android:textSize="25dp" />
-
-          <NumberPicker
-              android:id="@+id/numberPicker1"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_above="@+id/secsText"
-              android:layout_alignParentRight="true" />
 
           <TextView
               android:id="@+id/stepNumber"
@@ -110,13 +92,34 @@
               android:textColor="#342016"
               android:textSize="25dp" />
 
+          <NumberPicker
+              android:id="@+id/numberPicker1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_above="@+id/minsText"
+              android:layout_alignParentRight="true" />
+
+          <Button
+              android:id="@+id/doneButton"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_alignParentLeft="true"
+              android:layout_marginBottom="10dp"
+              android:background="#342016"
+              android:onClick="finishRecipe"
+              android:text="Recipe Finished"
+              android:textColor="#FFFFFF"
+              android:textSize="25dp" />
+
           <Button
               android:id="@+id/nextStep"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:layout_above="@+id/doneButton"
               android:layout_alignParentLeft="true"
-              android:layout_below="@+id/hoursText"
-              android:layout_marginTop="35dp"
+              android:layout_marginBottom="10dp"
+              android:background="#342016"
               android:onClick="toNextStep"
               android:text="Add another step"
               android:textColor="#FFFFFF"

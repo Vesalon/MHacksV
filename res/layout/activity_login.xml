@@ -29,7 +29,7 @@
         android:textSize="25sp" />
 
     <EditText
-        android:id="@+id/usernameInput"
+        android:id="@+id/login_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -44,7 +44,7 @@
         android:width="250dp" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="#342016"

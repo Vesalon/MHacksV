@@ -8,18 +8,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
 public class BeginCookingActivity extends Activity {
 
-	TextToSpeech tts;
-	Chronometer t;
-	TextView step;
-	Recipe recipe;
-	ArrayList<Step> steps = new ArrayList<Step>();
-	ArrayList<String> s = new ArrayList<String>();
-	Bundle b;
+	private TextToSpeech tts;
+	private Chronometer timer;
+	private TextView step;
+	private Recipe recipe;
+	private ArrayList<Step> steps = new ArrayList<Step>();
+	private ArrayList<String> s = new ArrayList<String>();
+	private int counter;
+	private Button startNext;
+	private Button exit;
 
 
 	@Override
@@ -27,46 +30,60 @@ public class BeginCookingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_begin_cooking);
 		Intent intent = getIntent();
-		b = intent.getExtras();
-		s = b.getStringArrayList("recipe");
-		
-		for(int j = 0; j < s.size(); j++){
-			steps.add(new Step(s.get(j)));
-		}
-		recipe = new Recipe(steps);
-		
-		otherInit();
-		
+		int index = intent.getIntExtra("com.habaneros.Kitchenette.recname", 0);
+		recipe = RecipeList.get(index);
+		counter = 0;
+		startNext = (Button) findViewById(R.id.cooking_startNext);
+		exit = (Button) findViewById(R.id.cooking_end);
+		step = (TextView) findViewById(R.id.cooking_step);
+		timer = (Chronometer) findViewById(R.id.cooking_timer);		
+		otherInit();	
 	}
 
 	public void otherInit() {
-		step = (TextView) findViewById(R.id.steps);
-		step.setText(recipe.getStep(0).toString());
-		
-		tts=new TextToSpeech(getApplicationContext(), 
+		tts = new TextToSpeech(getApplicationContext(), 
 			new TextToSpeech.OnInitListener() {
-			@Override
-			public void onInit(int status) {
-			    if(status != TextToSpeech.ERROR){
-			        tts.setLanguage(Locale.UK);
-			    }				
-			}
+				@Override
+				public void onInit(int status) {
+				    if(status != TextToSpeech.ERROR){
+				        tts.setLanguage(Locale.UK);
+				    }				
+				}
 			});
 	}
 	
 	@Override
-	   public void onPause(){
-	      if(tts !=null){
-	         tts.stop();
-	         tts.shutdown();
-	      }
-	      super.onPause();
+	public void onPause() {
+	   if(tts != null){
+	      tts.stop();
+	      tts.shutdown();
 	   }
+	   super.onPause();
+	}
+	
+	public void stopCook(View view) {
+		if(tts != null){
+		   tts.stop();
+		   tts.shutdown();
+		}
+		Intent intent = new Intent(this, ChooseRecipeTypeActivity.class);
+        startActivity(intent);
+	}	
 	
 	public void speakText(View view){
-	      String toSpeak = recipe.getFirstStep().toString();
-	      tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-
-	   }
+		Step current = recipe.getStep(counter);
+		step.setText(current.toString());
+		if (counter == 0) {
+	    	startNext.setText("Next Step");
+	    } else if (counter == recipe.size() - 1) {
+	    	startNext.setText("");
+	    	startNext.setEnabled(false);
+	    }
+	    tts.speak(current.toString(), TextToSpeech.QUEUE_FLUSH, null);
+	    if (current.isTimed()) {
+	    	timer.start();
+	    }
+	    counter++;
+	}
 
 }

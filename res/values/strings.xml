@@ -16,5 +16,6 @@
     <string name="sign_in">Sign in to your account.</string>
     <string name="main_greeting">Let\'s Cook!</string>
     <string name="title_activity_add_step">AddStepActivity</string>
+    <string name="title_activity_rating">RatingActivity</string>
 
 </resources>

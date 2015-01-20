@@ -8,7 +8,7 @@
     android:onClick="toLogin" >
 
     <ImageView
-        android:id="@+id/logo_welcome"
+        android:id="@+id/welcome_logo"
         android:layout_width="310dp"
         android:layout_height="310dp"
         android:layout_gravity="center"
@@ -16,7 +16,7 @@
         android:src="@drawable/logo3dmed" />
 
     <TextView
-        android:id="@+id/main_title"
+        android:id="@+id/welcome_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -27,7 +27,7 @@
         android:textSize="80sp" />
 
     <TextView
-        android:id="@+id/main_greeting"
+        android:id="@+id/welcome_greeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

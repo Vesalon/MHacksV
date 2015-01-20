@@ -7,12 +7,16 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class ChooseRecipeTypeActivity extends Activity {
+public class ChooseRecipeTypeActivity extends Activity implements OnItemSelectedListener {
 
+	Recipe recipeChoice;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,11 +38,12 @@ public class ChooseRecipeTypeActivity extends Activity {
 			spinnerArr1[i] = RecipeList.get(i).getName();
 		}
 		Spinner spinner = (Spinner) findViewById(R.id.ourDropdown);
+		spinner.setOnItemSelectedListener(this);
 		// Create an ArrayAdapter using the string array and a default spinner
 		// layout
-		 ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this,
+		ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this,
 		            android.R.layout.simple_spinner_item, spinnerArr1);
-		        spinner.setAdapter(adapter);
+		spinner.setAdapter(adapter);
 		// Specify the layout to use when the list of choices appears
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
@@ -49,14 +54,28 @@ public class ChooseRecipeTypeActivity extends Activity {
 //		//for now assume no DB
 //	}
 	
-//	public void toBeginCooking(View view) {
-//		Intent intent = new Intent(this, BeginCooking.class);
-//        startActivity(intent);
-//	}
+	public void toBeginCooking(View view) {
+		Intent intent = new Intent(this, BeginCookingActivity.class);
+		intent.putExtra("com.habaneros.Kitchenette.recname", RecipeList.indexOf(recipeChoice));
+        startActivity(intent);
+	}
 	
 	
 	public void toCreateRecipe(View view) {
 		Intent intent = new Intent(this, CreateRecipeActivity.class);
         startActivity(intent);
-    }	
+    }
+
+	@Override
+	public void onItemSelected(AdapterView<?> parent, View view, int pos,
+			long id) {
+		// TODO Auto-generated method stub
+		recipeChoice = RecipeList.get(pos);
+	}
+
+	@Override
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+		
+	}	
 }

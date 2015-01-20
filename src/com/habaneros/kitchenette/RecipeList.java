@@ -7,6 +7,7 @@ class RecipeList {
     
     private static ArrayList<Recipe> recipes = new ArrayList<Recipe>();
     private static boolean check = true;
+    private static int index = 0; //describes last added object
 
 
     
@@ -38,10 +39,10 @@ class RecipeList {
 	        recipes.add(cB);
 	        
 	        Recipe bT = new Recipe("The Habaneros", "Beef Tacos");
-	        cB.addStep("Obtain 8 to 12 corn tortillas, 12 to 16 ounces of ground sirloin, shredded lettuce, tomatoes, and taco seasoning");
-	        cB.addStep("Combine the filling ingredients along with the taco seasoning until evenly mixed");
-	        cB.addStep("Fill the corn tortillas with the filling, topping off with shredded cheddar cheese");
-	        cB.addStep("Serve warm");
+	        bT.addStep("Obtain 8 to 12 corn tortillas, 12 to 16 ounces of ground sirloin, shredded lettuce, tomatoes, and taco seasoning");
+	        bT.addStep("Combine the filling ingredients along with the taco seasoning until evenly mixed");
+	        bT.addStep("Fill the corn tortillas with the filling, topping off with shredded cheddar cheese");
+	        bT.addStep("Serve warm");
 	        recipes.add(bT);
 	        
 	        Recipe mP = new Recipe("The Habaneros", "Margherita Pizza");
@@ -53,6 +54,7 @@ class RecipeList {
 	        mP.addStep("Serve hot");
 	        recipes.add(mP);
 	        
+	        index += 4;
 	        check = false;
         }
     }
@@ -65,16 +67,23 @@ class RecipeList {
         return recipes.size()==0;
     }
     
-    public static void addRecipe(Recipe r) {
+    public static int addRecipe(Recipe r) {
+    	index++;
         recipes.add(r);
+        return index;
     }
     
     public static boolean removeRecipe(Recipe r) {
+    	index--;
         return recipes.remove(r);
     }
     
     public static Recipe get(int index) {
         return recipes.get(index);
+    }
+    
+    public static int indexOf(Recipe r) {
+    	return recipes.indexOf(r);
     }
     
     public static ArrayList<Recipe> getList() {

@@ -27,13 +27,13 @@
         android:background="#342016" />
 
     <Button
-        android:id="@+id/Button01"
+        android:id="@+id/beginCookButton"
         android:layout_width="282dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="35dp"
         android:background="#342016"
-        android:onClick="toCreateRecipe"
+        android:onClick="toBeginCooking"
         android:text="Start Here"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#FFFFFF"

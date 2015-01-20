@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Yesteryear-Regular.ttf");
-		TextView title = (TextView) findViewById(R.id.main_title);
+		TextView title = (TextView) findViewById(R.id.welcome_title);
 		title.setTypeface(type);
 	}
 	
